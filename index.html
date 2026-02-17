@@ -1,0 +1,102 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LABX | Computational Life Sciences</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    <style>
+      :root {
+        --color-gold-light: #F3E5AB;
+        --color-gold: #D4AF37;
+        --color-gold-dark: #996515;
+      }
+      body {
+        font-family: 'Inter', sans-serif;
+        background-color: #FAFAFA;
+      }
+      h1, h2, h3, h4, .font-serif {
+        font-family: 'Playfair+Display', serif;
+      }
+      .text-gold-gradient {
+        background: linear-gradient(to right, var(--color-gold-dark), var(--color-gold), var(--color-gold-dark));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+      .bg-gold-gradient {
+        background: linear-gradient(135deg, #B8860B 0%, #D4AF37 50%, #FFD700 100%);
+      }
+      .bg-premium-dark {
+        background-color: #0A0A0A;
+      }
+      .glass-card {
+        background: rgba(255, 255, 255, 0.7);
+        backdrop-filter: blur(12px);
+        border: 1px solid rgba(212, 175, 55, 0.2);
+      }
+      .reveal {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+      .reveal.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      @keyframes float {
+        0% { transform: translateY(0px); }
+        50% { transform: translateY(-10px); }
+        100% { transform: translateY(0px); }
+      }
+      .float-animation {
+        animation: float 6s ease-in-out infinite;
+      }
+      .gold-shimmer {
+        position: relative;
+        overflow: hidden;
+      }
+      .gold-shimmer::after {
+        content: '';
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: linear-gradient(
+          to bottom right,
+          rgba(255, 255, 255, 0) 0%,
+          rgba(255, 255, 255, 0) 40%,
+          rgba(255, 255, 255, 0.4) 50%,
+          rgba(255, 255, 255, 0) 60%,
+          rgba(255, 255, 255, 0) 100%
+        );
+        transform: rotate(45deg);
+        transition: all 0.5s;
+        opacity: 0;
+      }
+      .gold-shimmer:hover::after {
+        opacity: 1;
+        left: 100%;
+        top: 100%;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://esm.sh/react@^19.2.4/",
+    "react": "https://esm.sh/react@^19.2.4",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
+    "react-router-dom": "https://esm.sh/react-router-dom@^7.13.0",
+    "lucide-react": "https://esm.sh/lucide-react@^0.564.0"
+  }
+}
+</script>
+</head>
+  <body class="antialiased">
+    <div id="root"></div>
+  </body>
+</html>
